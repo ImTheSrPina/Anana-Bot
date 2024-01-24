@@ -1,0 +1,13 @@
+Librerias usadas y necesarias para el funcionamiento del Bot
+
+discord.py (Requiere instalar)
+json
+os 
+asyncio
+requests (Requiere instalar)
+aiohttp
+python-dotenv
+
+
+
+JcPz8adS
