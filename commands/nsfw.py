@@ -21,7 +21,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def badwaifu(self, ctx):
-        jsonResponse = await apiRequest('https://api.waifu.pics/nsfw/waifu')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://api.waifu.pics/nsfw/waifu')
 
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['url']))
@@ -33,7 +34,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def blowjob(self, ctx):
-        jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/blowjob/gif')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/blowjob/gif')
 
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['link']))
@@ -45,7 +47,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def badneko(self, ctx):
-        jsonResponse = await apiRequest('https://api.waifu.pics/nsfw/neko')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://api.waifu.pics/nsfw/neko')
 
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['url']))
@@ -57,7 +60,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def hentai(self, ctx):
-        jsonResponse = await apiRequest('https://api.waifu.im/search/?included_tags=hentai')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://api.waifu.im/search/?included_tags=hentai')
 
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['images'][0]['url']))
@@ -69,7 +73,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def milf(self, ctx):
-        jsonResponse = await apiRequest('https://api.waifu.im/search/?included_tags=milf')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://api.waifu.im/search/?included_tags=milf')
 
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['images'][0]['url']))
@@ -81,7 +86,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def ass(self, ctx):
-        jsonResponse = await apiRequest('https://api.waifu.im/search/?included_tags=ass')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://api.waifu.im/search/?included_tags=ass')
         
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['images'][0]['url']))
@@ -93,7 +99,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def oral(self, ctx):
-        jsonResponse = await apiRequest('https://api.waifu.im/search/?included_tags=oral')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://api.waifu.im/search/?included_tags=oral')
         
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['images'][0]['url']))
@@ -105,7 +112,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def paizuri(self, ctx):
-        jsonResponse = await apiRequest('https://api.waifu.im/search/?included_tags=paizuri')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://api.waifu.im/search/?included_tags=paizuri')
         
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['images'][0]['url']))
@@ -117,7 +125,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def ecchi(self, ctx):
-        jsonResponse = await apiRequest('https://api.waifu.im/search/?included_tags=ecchi')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://api.waifu.im/search/?included_tags=ecchi')
         
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['images'][0]['url']))
@@ -129,7 +138,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def ero(self, ctx):
-        jsonResponse = await apiRequest('https://api.waifu.im/search/?included_tags=ero')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://api.waifu.im/search/?included_tags=ero')
         
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['images'][0]['url']))
@@ -141,7 +151,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def anal (self, ctx):
-        jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/anal/gif')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/anal/gif')
 
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['link']))
@@ -153,7 +164,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def cum (self, ctx):
-        jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/cum/gif')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/cum/gif')
 
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['link']))
@@ -165,7 +177,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def fuck (self, ctx):
-        jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/fuck/gif')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/fuck/gif')
 
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['link']))
@@ -177,7 +190,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def pussylick (self, ctx):
-        jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/pussylick/gif')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/pussylick/gif')
 
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['link']))
@@ -189,7 +203,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def solo (self, ctx):
-        jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/solo/gif')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/solo/gif')
 
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['link']))
@@ -201,7 +216,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def triofff (self, ctx):
-        jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/threesome_fff/gif')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/threesome_fff/gif')
 
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['link']))
@@ -213,7 +229,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def trioffm (self, ctx):
-        jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/threesome_ffm/gif')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/threesome_ffm/gif')
 
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['link']))
@@ -225,7 +242,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def triommf (self, ctx):
-        jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/threesome_mmf/gif')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/threesome_mmf/gif')
 
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['link']))
@@ -237,7 +255,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def yuri (self, ctx):
-        jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/yuri/gif')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://purrbot.site/api/img/nsfw/yuri/gif')
 
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['link']))
@@ -249,7 +268,8 @@ class nsfw(commands.Cog):
     @commands.command()
     @commands.is_nsfw()
     async def trap (self, ctx):
-        jsonResponse = await apiRequest('https://api.waifu.pics/nsfw/trap')
+        async with ctx.typing():
+            jsonResponse = await apiRequest('https://api.waifu.pics/nsfw/trap')
 
         if jsonResponse != False:
             await ctx.send(embed = imageEmbedCreate(0xFFC0CB, jsonResponse['url']))
@@ -262,8 +282,9 @@ class nsfw(commands.Cog):
 
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):
-        if isinstance(error, commands.NSFWChannelRequired):
-            await ctx.send('Este comando solo puede usarse en canales NSFW')
+        async with ctx.typing():
+            if isinstance(error, commands.NSFWChannelRequired):
+                await ctx.send('Este comando solo puede usarse en canales NSFW')
 
 
     
