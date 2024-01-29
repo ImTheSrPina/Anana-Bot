@@ -1,7 +1,8 @@
 
 # Ignore dev files
 
-test/
+test/*.py
+test/*.json
 keys/.env
 
 # Ignore the json files extension
