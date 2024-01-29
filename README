@@ -1,13 +1,27 @@
 Librerias usadas y necesarias para el funcionamiento del Bot
 
 discord.py (Requiere instalar)
+python-dotenv
+requests (Requiere instalar)
+
+discord-py-slash-command
+
+
+
+
 json
 os 
 asyncio
-requests (Requiere instalar)
+
 aiohttp
 python-dotenv
 
 
 
 JcPz8adS
+
+
+
+
+
+version: 2.5.0

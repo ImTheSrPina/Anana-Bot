@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 
 
-from functions.functions import modEmbed, ckeckMention
+from functions.functions import modEmbed, checkMention
 
 
 class mod(commands.Cog):
@@ -20,28 +20,16 @@ class mod(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print("Mod commands ready!")
-
-
-    
-
-    @commands.command()
-    async def testembedmod(self, ctx):
-        async with ctx.typing():
-            await ctx.send(embed = modEmbed(
-                ctx.author.name, 
-                f"{ctx.author.name} probando embed!!!", 
-                "Test de embed de administración", 
-                ctx.author.avatar))
+        print("Mod prefix commands loaded")
 
 
 
     @commands.command()
-    @commands.has_permissions(kick_members=True)
+    @commands.has_permissions(administrator=True)
     async def kick(self, ctx, member: discord.Member = None, *, reason = "Sin especificar"):
 
         try:
-            mention = ckeckMention(member, ctx.author, self.bot.user)
+            mention = checkMention(member, ctx.author, self.bot.user)
 
             if mention is True:
                 async with ctx.typing():
@@ -63,11 +51,11 @@ class mod(commands.Cog):
 
 
     @commands.command()
-    @commands.has_permissions(ban_members=True)
+    @commands.has_permissions(administrator=True)
     async def ban(self, ctx, member: discord.Member = None, *, reason = "Sin especificar"):
 
         try:
-            mention = ckeckMention(member, ctx.author, self.bot.user)
+            mention = checkMention(member, ctx.author, self.bot.user)
 
             if mention is True:
                 async with ctx.typing():
@@ -92,11 +80,11 @@ class mod(commands.Cog):
         
     @commands.command()
     @commands.guild_only()
-    @commands.has_permissions(ban_members = True)
+    @commands.has_permissions(administrator = True)
     async def unban(self, ctx, *, memberID: int = None):
 
         if memberID is None:
-            await ctx.send("Para desbanear a un usuario, debes dar su ID de usuario de quien deseas desbanear")
+            await ctx.send("Para desbanear a un usuario, debes dar el ID de usuario de quien deseas desbanear")
         else:
             async with ctx.typing():
                 try:
@@ -124,7 +112,7 @@ class mod(commands.Cog):
             await ctx.send("No existe un rol de silenciado, ejecuta el comando ""rolmute"" para crear uno")
 
         try:
-            mention = ckeckMention(member, ctx.author, self.bot.user)
+            mention = checkMention(member, ctx.author, self.bot.user)
             if mention is True:
                 async with ctx.typing():
                     await member.add_roles(silence_rol)
@@ -153,7 +141,7 @@ class mod(commands.Cog):
         if not silence_rol:
             await ctx.send("No existe un rol de silenciado, ejecuta el comando rolmute para crear uno")
 
-        mention = ckeckMention(member, ctx.author, self.bot.user)
+        mention = checkMention(member, ctx.author, self.bot.user)
 
         try:
             if mention is True:
@@ -205,10 +193,10 @@ class mod(commands.Cog):
                     for canal in ctx.guild.text_channels:
                         await canal.set_permissions(silence_rol, send_messages=False, speak=False)
 
-                    await ctx.send("Se ha creado el rol de Silenciado")
                     await ctx.send(
-                        "En dado caso de que el silenciado no funcione, verifica que el rol de silenciado tenga la jerarquia mas alta de roles")
-                    await ctx.send("Puedes personalizar el color del rol, pero recuerda, no modifiques para nada el nombre")
+                        f"\nSe ha creado el rol de Silenciado"
+                        f"\nEn dado caso de que el silenciado no funcione, verifica que el rol de silenciado tenga la jerarquia mas alta de roles"
+                        f"\nPuedes personalizar el color del rol, pero recuerda, no modifiques para nada el nombre")
 
             else:
                 await ctx.send("El rol de Silenciado ya existe")
@@ -221,10 +209,8 @@ class mod(commands.Cog):
     @commands.command()
     @commands.has_permissions(administrator = True)
     async def rol(self, ctx, member: discord.Member = None, role: discord.Role = None):
-
-
         try:
-            mention = ckeckMention(member, ctx.author, self.bot.user)
+            mention = checkMention(member, ctx.author, self.bot.user)
             if mention is True:
                 async with ctx.typing():
                     if role is None:
@@ -251,9 +237,8 @@ class mod(commands.Cog):
     @commands.command(aliases=["revocarol"])
     @commands.has_permissions(administrator = True)
     async def removerol(self, ctx, member: discord.Member = None, role: discord.Role = None):
-
         try:
-            mention = ckeckMention(member, ctx.author, self.bot.user)
+            mention = checkMention(member, ctx.author, self.bot.user)
             if mention is True:
                 async with ctx.typing():
                     if role is None:
@@ -279,13 +264,12 @@ class mod(commands.Cog):
 
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):
-        async with ctx.typing():
-            async with ctx.typing():
-                if isinstance(error, commands.MissingPermissions):
-                    await ctx.send("No tienes suficientes permisos para usar este comando.")
-                
-                if isinstance(error, commands.BadArgument):
-                    await ctx.send("Debes hacer una mencion al usar este comando")
+        
+        if isinstance(error, commands.MissingPermissions):
+            await ctx.send("No tienes suficientes permisos para usar este comando.")
+        
+        if isinstance(error, commands.BadArgument):
+            await ctx.send("Debes hacer una mencion al usar este comando")
 
 
 

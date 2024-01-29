@@ -1,0 +1,104 @@
+{
+    "action": {
+        "bully":{
+            "noMention":null,
+            "mention":"@author molesta a @member",
+            "author":null
+        },
+        "hug":{
+            "noMention":"@author necesita un abrazo",
+            "mention":"@author abraza a @member",
+            "author":"@bot abraza a @member >_<"
+        },
+        "cry":{
+            "noMention":"@author comenzó a llorar :(",
+            "mention":null,
+            "author":null
+        },
+        "kiss":{
+            "noMention":null,
+            "mention":"@author beso a @member",
+            "author":"Besarse a si mismo es casi imposible, No?"
+        },
+        "lick":{
+            "noMention":null,
+            "mention":"@author lame a @member",
+            "author":"Que planeas a lamerte?"
+        },
+        "pat":{
+            "noMention":null,
+            "mention":"@author acaricio a @member",
+            "author":"@bot acaricio a @author >_<"
+        },
+        "bonk":{
+            "noMention":null,
+            "mention":"@author golpeo a @member",
+            "author":"@author se ha golpeado a si mismo?"
+        },
+        "blush":{
+            "noMention":"@author reaction",
+            "mention":null,
+            "author":null
+        },
+        "smile":{
+            "noMention":"@author esta sonrriendo :D",
+            "mention":null,
+            "author":null
+        },
+        "wave":{
+            "noMention":"@author saluda a todo el mundo :D ",
+            "mention":"@author saluda a @member",
+            "author":null
+        },
+        "handhold":{
+            "noMention":null,
+            "mention":"@author toma la mano de @member",
+            "author":"@bot tomo la mano de @author >_<"
+        },
+        "nom":{
+            "noMention":"@author esta comiendo, nom",
+            "mention":null,
+            "author":null
+        },
+        "bite":{
+            "noMention":null,
+            "mention":"@author mordio a @member",
+            "author":null
+        },
+        "slap":{
+            "noMention":null,
+            "mention":"@author abofeteó a @member",
+            "author":null
+        },
+        "tickle":{
+            "noMention":null,
+            "mention":"@author le hace cosquillas a @member",
+            "author":"@bot le hace cosquillas a @author"
+        },
+        "happy":{
+            "noMention":"@author está feliz :)",
+            "mention":null,
+            "author":null
+        },
+        "wink":{
+            "noMention":"Confia pibe",
+            "mention":null,
+            "author":null
+        },
+        "dance":{
+            "noMention":"@author comenzo a bailar",
+            "mention":null,
+            "author":null
+        },
+        "cringe":{
+            "noMention":"@author comienza a sentir una sensacion inexplicable",
+            "mention":null,
+            "author":null
+        },
+        "poke":{
+            "noMention":null,
+            "mention":"@author toca a @member",
+            "author":null
+        }
+    }
+}
