@@ -1,0 +1,17 @@
+
+# Ignore dev files
+
+/test
+/keys
+
+# Ignore the json files extension
+
+/json/guildConfig.json
+/json/goodbye.json
+/json/welcome.json
+
+# Ignore cache files
+
+/__pycache__
+/commands/__pycache__
+/functions/__pycache__
