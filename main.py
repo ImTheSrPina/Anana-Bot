@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from functions.functions import prefixes
 
 
-load_dotenv('keys/.env.key')
+load_dotenv('keys/.env')
 YOUR_TOKEN: str = os.getenv('TOKEN_BOT_KEY')
 
 

@@ -2,7 +2,7 @@
 # Ignore dev files
 
 test/
-keys/
+keys/.env
 
 # Ignore the json files extension
 
